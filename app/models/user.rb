@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username, :if => Proc.new {|user|
     user.previous_username.nil? || user.username != user.previous_username}
 
+  def nowy()
+    
+  end
+
   def initialize(attributes = {})
     super     # must allow the active record to initialize!
     attributes.each do |name, value|
